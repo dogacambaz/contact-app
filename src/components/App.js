@@ -43,11 +43,11 @@ function App() {
   };
 
   const removeContactHandler = async (id) => {
-    /* if (window.confirm("Are you sure you want to delete this contact?")) {
+    if (window.confirm("Are you sure you want to delete this contact?")) {
     } else {
       // Do nothing!
       return;
-    }*/
+    }
     await api.delete("/contacts/" + id);
     const newContactList = contacts.filter((contact) => {
       return contact.id !== id;
@@ -59,9 +59,13 @@ function App() {
     setSearchTerm(searchTerm);
     if (searchTerm !== "") {
       const newContactList = contacts.filter((contact) => {
+        console.log(
+          Object.values(contact).join(" ").toLowerCase().substring(36)
+        );
         return Object.values(contact)
           .join(" ")
           .toLowerCase()
+          .substring(36) //to get rid of the generated id
           .includes(searchTerm.toLowerCase());
       });
       setSearchResults(newContactList);
@@ -87,9 +91,11 @@ function App() {
   }, [contacts]);
 
   return (
-    <div className="ui container">
+    <div class="App" className="ui container">
       <Router>
-        <Header />
+        <h1 style={{ textAlignVertical: "center", textAlign: "center" }}>
+          My Contacts
+        </h1>
         <Switch>
           <Route
             path="/add"

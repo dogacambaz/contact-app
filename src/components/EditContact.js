@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class EditContact extends React.Component {
   constructor(props) {
@@ -44,6 +45,9 @@ class EditContact extends React.Component {
             />
           </div>
           <button className="ui button blue">Update</button>
+          <Link to="/">
+            <button className="ui violet basic button">Cancel</button>
+          </Link>
         </form>
       </div>
     );

@@ -1,4 +1,6 @@
 import React from "react";
+import { Form, Input, Label } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 class AddContact extends React.Component {
   state = {
@@ -43,6 +45,11 @@ class AddContact extends React.Component {
             />
           </div>
           <button className="ui button blue">Add</button>
+          <Link to="/">
+            <button className="ui violet basic button">
+              Back to Contact List
+            </button>
+          </Link>
         </form>
       </div>
     );
