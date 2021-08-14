@@ -32,7 +32,7 @@ const CardContact = (props) => {
         >
           <i
             className="edit alternate outline icon"
-            style={{ color: "blue", marginTop: "7px" }}
+            style={{ color: "grey", marginTop: "7px" }}
           ></i>
         </Link>
       </div>
